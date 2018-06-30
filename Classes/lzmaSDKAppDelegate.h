@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface lzmaSDKAppDelegate : NSObject <UIApplicationDelegate> {
+@interface lzmaSDKAppDelegate : UIViewController <UIApplicationDelegate> {
     UIWindow *window;
 }
 

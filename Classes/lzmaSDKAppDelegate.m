@@ -10,6 +10,7 @@
 #import "LZMAExtractor.h"
 
 
+/*
 // Return TRUE if file exists, FALSE otherwise
 
 BOOL fileExists(NSString *filePath) {
@@ -32,6 +33,7 @@ uint32_t filesize(char *filepath) {
   fclose(fp);
   return size;
 }
+*/
 
 @implementation lzmaSDKAppDelegate
 
@@ -64,7 +66,7 @@ uint32_t filesize(char *filepath) {
   for (NSString *entryPath in contents) {
     NSData *outputData = [NSData dataWithContentsOfFile:entryPath];
     NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
-    [outStr autorelease];
+//    [outStr autorelease];
     
     NSLog(@"%@", entryPath);
     NSLog(@"%@", outStr);
@@ -83,7 +85,7 @@ uint32_t filesize(char *filepath) {
   if (worked) {
     NSData *outputData = [NSData dataWithContentsOfFile:makeTmpPath];
     NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
-    [outStr autorelease];
+ //   [outStr autorelease];
     
     NSLog(@"%@", makeTmpFilename);
     NSLog(@"%@", outStr);
@@ -348,7 +350,8 @@ uint32_t filesize(char *filepath) {
 }
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (void)viewDidAppear:(BOOL)animated
 {
   // Override point for customization after application launch
   UIViewController *viewController = [[UIViewController alloc] init];
@@ -365,7 +368,7 @@ uint32_t filesize(char *filepath) {
   
   [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
   
-  return TRUE;
+//  return TRUE;
 }
 
 // This callback timer runs after the app has started. If we left this blocking logic in
@@ -391,9 +394,9 @@ uint32_t filesize(char *filepath) {
   window.backgroundColor = [UIColor greenColor];  
 }
 
-- (void)dealloc {
-    [window release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//   [window release];
+//    [super dealloc];
+//}
 
 @end

@@ -758,6 +758,10 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *threadCw
       SzArEx_DictCache_free(&dictCache);
     }
   }
+  else
+  {
+	PrintError("SzArEx_Open failed");
+  }
   SzArEx_Free(&db, &allocImp);
   SzFree(NULL, temp);
   
